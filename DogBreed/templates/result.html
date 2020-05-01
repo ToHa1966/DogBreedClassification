@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+     <link rel="stylesheet" href="/static/normalize.css"/>
+	 <link rel="stylesheet" href="/static/skeleton.css"/>
+	 <link rel="stylesheet" href="/static/style.css"/>
+		<style>
+			.im1 {
+				width: 400px;
+				height: 400px;
+				border-radius: 50%;
+			}
+		</style>
+
+</head>
+<body>
+    <div class="container">
+	<header>
+		<ul class="navigation">
+                <li class="navigation-item">
+                    <a href="/"> Startpage</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="/predict"> Resultpage</a>
+                </li>
+            </ul>
+            <div style="clear:both;">&nbsp;</div>
+
+			Deep Learning FLASK APP
+
+		<h2>Dog Breed Classifier</h2>
+
+	</header>
+
+		<h2>You chose this picture</h2>
+
+		<img src={{message}} class="im1">
+
+		{% if message2 == 'dog' %}
+			{% if message4 >= 60.0 %}
+				<p>So, so ! The algorithm says : It's a dog ! Hurrah!</p>
+				<p>Anyway ! You are a beautiful {{ message1 }} !</p>
+			{% else %}
+				<p>So, so ! The algorithm says : It's a dog ! Hurrah!</p>
+				<p>Anyway ! You are a genetically very sound mixture of a {{ message1 }} and a {{ message3 }}. Very beautiful!</p>
+			{% endif %}
+		{% elif message2 == 'human' %}
+			<p>So, so ! The algorithm says : It's a human ! OK !</p>
+			<p>Anyway ! Dogwise you are a genetically very sound mixture of a {{ message1 }} and a {{ message3 }}. Very beautiful!</p>
+		{% elif message2 == 'alien' %}
+			<p>You are an Alien and therefore a no show! Get out of here!!</p>
+		{% endif %}
+	</div>
+</body>
+</html>

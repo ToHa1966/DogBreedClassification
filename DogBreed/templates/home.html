@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	    <link rel="stylesheet" href="/static/normalize.css"/>
+        <link rel="stylesheet" href="/static/skeleton.css"/>
+        <link rel="stylesheet" href="/static/style.css"/>
+		<style>
+			.im1 {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+			}
+		</style>
+</head>
+<body>
+    <div class="container">
+	<header>
+
+		Deep Learning Flask APP
+
+		<h2>Dog Breed Classifier</h2>
+
+		<img src="https://assets3.thrillist.com/v1/image/2843959/size/tmg-article_tall.jpg" class="im1" >
+
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Picture URL (http:....) here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="10" cols="60"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="predict">
+
+	</form>
+
+	</div>
+
+    </div>
+
+
+</body>
+</html>
